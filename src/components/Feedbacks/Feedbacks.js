@@ -21,21 +21,23 @@ export function Feedbacks() {
     setBad(state => state + 1);
   };
 
-  const countTotalFeedback = () => {
-    setTotal(good + neutral + bad);
-  };
+  // const countTotalFeedback = () => {
+  //   setTotal(good + neutral + bad);
+  // };
 
-  const countPositiveFeedbackPercentage = () => {
-    setPositivePercentage(parseFloat(((good / total) * 100).toFixed(1)));
-  };
+  // const countPositiveFeedbackPercentage = () => {
+  //   setPositivePercentage(parseFloat(((good / total) * 100).toFixed(1)));
+  // };
 
   useEffect(() => {
-    countTotalFeedback();
+    // countTotalFeedback();
+    setTotal(good + neutral + bad);
   }, [good, neutral, bad]);
 
   useEffect(() => {
-    countPositiveFeedbackPercentage();
-  }, [total]);
+    // countPositiveFeedbackPercentage();
+    setPositivePercentage(parseFloat(((good / total) * 100).toFixed(1)));
+  }, [total, good]);
 
   return (
     <>
